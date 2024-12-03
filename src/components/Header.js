@@ -5,13 +5,13 @@ const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white">
+    <header className="bg-custom-header p-4">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center px-4 sm:px-6 lg:px-8"
         aria-label="Global"
       >
         {/* Logo Section */}
-        <div className="flex items-center justify-start lg:flex-1">
+        <div className="flex items-center justify-start lg:flex-1 flex-shrink-0">
           <a href="#" className="p-1.5">
             <img
               className="h-8 w-auto"
@@ -22,12 +22,12 @@ const Header = () => {
         </div>
 
         {/* Title Section */}
-        <div className="flex-1 flex justify-center items-center">
-          <h1 className="text-black text-4xl font-bold">Images That Inspire</h1>
+        <div className="flex justify-center items-center flex-grow">
+          <h1 className="text-white text-5xl font-light">Image Gallery</h1>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex lg:hidden">
+        <div className="flex">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -54,9 +54,9 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden" role="dialog" aria-modal="true">
-          <div className="fixed inset-0 z-10 bg-black opacity-50" />
-          <div className="fixed inset-y-0 right-0 z-10 w-full max-w-sm bg-white px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
+        <div role="dialog" aria-modal="true">
+          <div className="fixed inset-0 z-10 bg-black opacity-30" />
+          <div className="fixed inset-y-0 right-0 z-20 w-full max-w-sm bg-white px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="p-1.5">
                 <img

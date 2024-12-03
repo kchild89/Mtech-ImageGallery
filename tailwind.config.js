@@ -10,6 +10,10 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        custom: {
+          header: "#030303", // Custom header background color
+          footer: "#555555", // Custom footer background color
+        },
       },
     },
   },
