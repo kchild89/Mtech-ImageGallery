@@ -82,12 +82,6 @@ const Gallery = ({ selectedCategory }) => {
               alt={selectedImage.alt_description}
               className="rounded-lg mb-4"
             />
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="close-button bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
-            >
-              Close
-            </button>
           </div>
         </div>
       )}
