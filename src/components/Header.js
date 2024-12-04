@@ -8,14 +8,14 @@ const Header = () => {
   return (
     <header className="bg-custom-header p-4">
       <nav
-        className="flex items-center justify-between mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        className="flex items-center justify-between mx-auto max-w-full px-0"
         aria-label="Global"
       >
         {/* Logo Section */}
         <div className="flex items-center">
           <Link href="/">
             <img
-              className="h-8 w-auto"
+              className="h-10 w-auto"
               src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
               alt="Your Company Logo"
             />
@@ -36,7 +36,7 @@ const Header = () => {
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className="h-6 w-6"
+              className="h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
