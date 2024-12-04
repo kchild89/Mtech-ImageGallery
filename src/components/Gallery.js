@@ -15,7 +15,8 @@ const Gallery = ({ selectedCategory }) => {
     const fetchImages = async () => {
       try {
         const response = await axios.get(apiUrl);
-        console.log("API Response:", response.data); // Debugging: Check the response data
+        console.log("API Response:", response.data);
+
         const categorizedImages = response.data.map((image) => ({
           ...image,
           category: image.tags?.[0]?.title || "Uncategorized",
@@ -26,7 +27,7 @@ const Gallery = ({ selectedCategory }) => {
           "Error fetching images:",
           err.response?.data || err.message
         );
-        setError(err.response?.data?.errors?.[0] || err.message); // Handle Unsplash error messages
+        setError(err.response?.data?.errors?.[0] || err.message);
       } finally {
         setLoading(false);
       }

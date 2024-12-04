@@ -12,14 +12,12 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
       <CategoryFilter
         categories={categories}
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
       />
       <Gallery selectedCategory={selectedCategory} />
-      <Footer />
     </div>
   );
 }

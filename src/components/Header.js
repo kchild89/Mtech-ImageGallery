@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -7,45 +8,46 @@ const Header = () => {
   return (
     <header className="bg-custom-header p-4">
       <nav
-        className="mx-auto flex max-w-7xl items-center px-4 sm:px-6 lg:px-8"
+        className="flex items-center justify-between mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         aria-label="Global"
       >
         {/* Logo Section */}
-        <div className="flex items-center justify-start lg:flex-1 flex-shrink-0">
-          <a href="#" className="p-1.5">
+        <div className="flex items-center">
+          <Link href="/">
             <img
               className="h-8 w-auto"
               src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
               alt="Your Company Logo"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Title Section */}
-        <div className="flex justify-center items-center flex-grow">
+        <div className="hidden sm:flex flex-grow justify-center">
           <h1 className="text-white text-5xl font-light">Image Gallery</h1>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex">
+        <div className="flex items-center">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
           >
             <span className="sr-only">Open main menu</span>
             <svg
               className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="1.5"
+              strokeWidth="2"
               stroke="currentColor"
               aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                d="M4 6h16M4 12h16m-7 6h7"
               />
             </svg>
           </button>
@@ -54,20 +56,19 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div role="dialog" aria-modal="true">
-          <div className="fixed inset-0 z-10 bg-black opacity-30" />
-          <div className="fixed inset-y-0 right-0 z-20 w-full max-w-sm bg-white px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <a href="#" className="p-1.5">
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
+          <div className="fixed inset-y-0 right-0 w-64 bg-white shadow-lg p-6">
+            <div className="flex items-center justify-between mb-4">
+              <Link href="/">
                 <img
                   className="h-8 w-auto"
                   src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
                   alt="Your Company Logo"
                 />
-              </a>
+              </Link>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="rounded-md p-2 text-gray-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -82,25 +83,31 @@ const Header = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M6 18 18 6M6 6l12 12"
+                    d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
               </button>
             </div>
-            <div className="mt-6 space-y-2">
-              <a href="#" className="block font-semibold text-gray-900">
+            <nav>
+              <Link
+                href="/"
+                className="block mb-2 font-semibold text-gray-900 hover:text-indigo-600"
+              >
                 Home
-              </a>
-              <a href="#" className="block font-semibold text-gray-900">
-                Categories
-              </a>
-              <a href="#" className="block font-semibold text-gray-900">
+              </Link>
+              <Link
+                href="/about-me"
+                className="block mb-2 font-semibold text-gray-900 hover:text-indigo-600"
+              >
                 About Me
-              </a>
-              <a href="#" className="block font-semibold text-gray-900">
+              </Link>
+              <Link
+                href="/contact"
+                className="block mb-2 font-semibold text-gray-900 hover:text-indigo-600"
+              >
                 Contact
-              </a>
-            </div>
+              </Link>
+            </nav>
           </div>
         </div>
       )}
