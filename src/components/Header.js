@@ -1,9 +1,28 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  const handleOutsideClick = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setMobileMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className="bg-custom-header p-4">
@@ -57,7 +76,10 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
-          <div className="fixed inset-y-0 right-0 w-64 bg-white shadow-lg p-6">
+          <div
+            ref={menuRef}
+            className="fixed inset-y-0 right-0 w-64 bg-white shadow-lg p-6"
+          >
             <div className="flex items-center justify-between mb-4">
               <Link href="/">
                 <img

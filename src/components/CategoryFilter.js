@@ -7,10 +7,10 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
         <button
           key={category}
           onClick={() => onCategoryChange(category)}
-          className={`px-4 py-2 rounded transition-colors duration-300 ${
+          className={`w-32 px-4 py-2 rounded text-center transition-colors duration-300 ${
             selectedCategory === category
-              ? "bg-var(--background) border-2 border-white text-var(--foreground)"
-              : "bg-var(--background) border-2 border-transparent text-var(--forground)"
+              ? "bg-[var(--background)] border-2 border-white text-[var(--foreground)]"
+              : "bg-[var(--background)] border-2 border-transparent text-[var(--foreground)]"
           }`}
         >
           {category}
