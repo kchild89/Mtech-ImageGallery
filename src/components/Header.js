@@ -78,7 +78,7 @@ const Header = () => {
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
           <div
             ref={menuRef}
-            className="fixed inset-y-0 right-0 w-64 bg-white shadow-lg p-6"
+            className="fixed inset-y-0 right-0 w-64 bg-[var(--background)] shadow-lg p-6 text-[var(--foreground)]"
           >
             <div className="flex items-center justify-between mb-4">
               <Link href="/">
@@ -110,22 +110,25 @@ const Header = () => {
                 </svg>
               </button>
             </div>
-            <nav>
+            <nav className="flex flex-col gap-4">
               <Link
                 href="/"
-                className="block mb-2 font-semibold text-gray-900 hover:text-indigo-600"
+                className="px-4 py-2 rounded text-[var(--foreground)] bg-[var(--background)] border-2 border-transparent hover:border-white transition-colors duration-300"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/about-me"
-                className="block mb-2 font-semibold text-gray-900 hover:text-indigo-600"
+                className="px-4 py-2 rounded text-[var(--foreground)] bg-[var(--background)] border-2 border-transparent hover:border-white transition-colors duration-300"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 About Me
               </Link>
               <Link
                 href="/contact"
-                className="block mb-2 font-semibold text-gray-900 hover:text-indigo-600"
+                className="px-4 py-2 rounded text-[var(--foreground)] bg-[var(--background)] border-2 border-transparent hover:border-white transition-colors duration-300"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
               </Link>
