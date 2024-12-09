@@ -34,7 +34,7 @@ const Header = () => {
         <div className="flex items-center ml-[20px]">
           <Link href="/">
             <img
-              className="h-10 w-10 cursor-pointer" // Standardized size
+              className="h-10 w-10 cursor-pointer"
               src="/react-brands-solid.svg"
               alt="Your Company Logo"
             />
@@ -55,7 +55,7 @@ const Header = () => {
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className="h-10 w-10" // Matches logo size
+              className="h-10 w-10"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
