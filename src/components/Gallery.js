@@ -9,7 +9,7 @@ const Gallery = ({ selectedCategory }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const apiUrl =
-    "https://api.unsplash.com/photos?client_id=HsUCdPBfsazwvaJ5zMNv6IKGcMWeL_BLxRv61wA5ucQ";
+    "https://api.unsplash.com/photos?client_id=HsUCdPBfsazwvaJ5zMNv6IKGcMWeL_BLxRv61wA5ucQ&per_page=9";
 
   useEffect(() => {
     const fetchImages = async () => {
