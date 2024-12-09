@@ -31,11 +31,11 @@ const Header = () => {
         aria-label="Global"
       >
         {/* Logo Section */}
-        <div className="flex items-center">
+        <div className="flex items-center ml-[20px]">
           <Link href="/">
             <img
-              className="h-10 w-auto"
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+              className="h-10 w-10 cursor-pointer" // Standardized size
+              src="/react-brands-solid.svg"
               alt="Your Company Logo"
             />
           </Link>
@@ -47,20 +47,20 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center">
+        <div className="flex items-center mr-[20px]">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            className="inline-flex items-center justify-center rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className="h-8 w-8"
+              className="h-10 w-10" // Matches logo size
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="2"
-              stroke="currentColor"
+              stroke="#00ffff"
               aria-hidden="true"
             >
               <path
@@ -83,8 +83,8 @@ const Header = () => {
             <div className="flex items-center justify-between mb-4">
               <Link href="/">
                 <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                  className="h-10 w-10 cursor-pointer"
+                  src="/react-brands-solid.svg"
                   alt="Your Company Logo"
                 />
               </Link>
@@ -95,7 +95,7 @@ const Header = () => {
               >
                 <span className="sr-only">Close menu</span>
                 <svg
-                  className="h-6 w-6"
+                  className="h-8 w-8"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
