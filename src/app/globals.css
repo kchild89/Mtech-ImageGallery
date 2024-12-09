@@ -35,7 +35,8 @@ body {
 }
 
 .category-filter {
-  margin-bottom: 16px;
+  padding: 16px;
+  font-size: 18px;
 }
 
 .modal {
