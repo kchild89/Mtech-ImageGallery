@@ -25,7 +25,7 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="bg-custom-header p-4">
+    <header className="bg-custom-header p-4 mb-0">
       <nav
         className="flex items-center justify-between mx-auto max-w-full px-0"
         aria-label="Global"
