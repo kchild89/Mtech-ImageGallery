@@ -75,19 +75,13 @@ const Gallery = ({ selectedCategory, currentPage, imagesPerPage }) => {
         >
           <div
             className="modal-content bg-white p-4 rounded-lg max-w-lg max-h-[80vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()} // Prevents closing modal when clicking inside
+            onClick={(e) => e.stopPropagation()}
           >
             <img
               src={selectedImage.urls.full}
               alt={selectedImage.alt_description}
               className="rounded-lg mb-4"
             />
-            <button
-              className="px-4 py-2 bg-black text-white rounded"
-              onClick={() => setSelectedImage(null)}
-            >
-              Close
-            </button>
           </div>
         </div>
       )}

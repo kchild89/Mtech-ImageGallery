@@ -7,9 +7,6 @@ const Modal = ({ image, onClose }) => {
     <div className="modal" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <img src={image.urls.full} alt={image.alt_description} />
-        <button onClick={onClose} className="close-button">
-          Close
-        </button>
       </div>
     </div>
   );

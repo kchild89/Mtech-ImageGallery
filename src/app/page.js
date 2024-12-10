@@ -15,8 +15,8 @@ export default function Home() {
     "Technology",
     "Travel",
   ];
-
-  const imagesPerPage = 9; // Number of images per page
+  // Number of images per page
+  const imagesPerPage = 9;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -25,7 +25,7 @@ export default function Home() {
         selectedCategory={selectedCategory}
         onCategoryChange={(category) => {
           setSelectedCategory(category);
-          setCurrentPage(1); // Reset to first page on category change
+          setCurrentPage(1);
         }}
       />
       <Gallery
@@ -34,7 +34,7 @@ export default function Home() {
         imagesPerPage={imagesPerPage}
       />
       <Pagination
-        totalImages={50} // Replace with a realistic number if available
+        totalImages={50}
         imagesPerPage={imagesPerPage}
         currentPage={currentPage}
         onPageChange={setCurrentPage}
