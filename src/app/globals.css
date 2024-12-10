@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root Variables for Colors */
 :root {
   --background: #ffffff;
   --foreground: #212121;
@@ -14,12 +15,23 @@
   }
 }
 
+/* Body Styles */
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Header */
+header {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Gallery Grid */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -34,11 +46,63 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Category Filter */
 .category-filter {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
   padding: 16px;
-  font-size: 18px;
 }
 
+.category-filter button {
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 2px solid transparent;
+  width: 128px; /* Same as w-32 in Tailwind */
+  padding: 8px 16px; /* Same as px-4 py-2 */
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.category-filter button:hover {
+  border-color: white;
+}
+
+.category-filter button.selected {
+  border-color: white;
+  color: var(--foreground);
+}
+
+/* Pagination */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  margin-top: auto; /* Pushes pagination to the bottom of the main section */
+}
+
+.pagination-wrapper button {
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 2px solid transparent;
+  width: 128px; /* Same as w-32 in Tailwind */
+  padding: 8px 16px; /* Same as px-4 py-2 */
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.pagination-wrapper button:hover {
+  border-color: white;
+}
+
+.pagination-wrapper button.selected {
+  border-color: white;
+  color: var(--foreground);
+}
+
+/* Modal */
 .modal {
   position: fixed;
   top: 0;
@@ -63,4 +127,19 @@ body {
 
 .close-button {
   margin-top: 16px;
+  background: var(--background);
+  color: var(--foreground);
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  margin-top: auto;
 }
