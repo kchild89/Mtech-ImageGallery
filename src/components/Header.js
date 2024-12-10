@@ -36,7 +36,7 @@ const Header = () => {
             <img
               className="h-10 w-10 cursor-pointer"
               src="/react-brands-solid.svg"
-              alt="Your Company Logo"
+              alt="React Logo - Home"
             />
           </Link>
         </div>
@@ -85,7 +85,7 @@ const Header = () => {
                 <img
                   className="h-10 w-10 cursor-pointer"
                   src="/react-brands-solid.svg"
-                  alt="Your Company Logo"
+                  alt="React Logo - Home"
                 />
               </Link>
               <button
